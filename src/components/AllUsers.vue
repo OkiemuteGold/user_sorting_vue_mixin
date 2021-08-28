@@ -34,44 +34,17 @@
 <script>
 import User from "./User.vue";
 
-import users from "@/data/users.js";
+import { filterUsers } from "./../mixins/filterUsers.js";
+
 export default {
+    mixins: [filterUsers],
     components: {
         User,
     },
     data() {
         return {
-            users,
-            sortCriteria: "",
+            status: null,
         };
-    },
-    methods: {
-        sort_by(users, sortProp) {
-            return users.sort(function (a, b) {
-                if (a[sortProp] > b[sortProp]) {
-                    return 1;
-                }
-                if (a[sortProp] < b[sortProp]) {
-                    return -1;
-                }
-                return 0;
-            });
-        },
-    },
-    computed: {
-        sortedUsers() {
-            if (!this.sortCriteria) {
-                this.sortCriteria == "created_at";
-            }
-            return this.sort_by(this.users, this.sortCriteria);
-        },
-        userProperties() {
-            let arr = [];
-            for (let prop in this.users[0]) {
-                arr.push(prop);
-            }
-            return arr;
-        },
     },
 };
 </script>
