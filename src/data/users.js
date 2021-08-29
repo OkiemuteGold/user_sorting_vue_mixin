@@ -42,13 +42,6 @@ export default [
         image: "https://randomuser.me/api/portraits/thumb/men/58.jpg"
     },
     {
-        name: "حامد کوتی",
-        age: 27,
-        status: 1,
-        created: "2018-04-17",
-        image: "https://randomuser.me/api/portraits/thumb/men/91.jpg"
-    },
-    {
         name: "Tammy Mendoza",
         age: 31,
         status: 0,
